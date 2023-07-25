@@ -25,7 +25,7 @@ const HomeScreen = () => {
         {error && <Message>{error}</Message>}
         {loading && <Loader />}
         <p className="mt-5 fs-1 ps-4 text-capitalize roboto">Avaible for you</p>
-        <Row className="my-3">
+        <Row className="py-3">
           {items.map((item) => (
             <>
               <Col key={item._id} md={4} xl={3} sm={6}>
