@@ -46,7 +46,7 @@ userSchema.methods.CreateToken = function () {
     },
     process.env.SECRET_KEY,
     {
-      expiresIn: "1d",
+      expiresIn: "30m",
     }
   );
 };

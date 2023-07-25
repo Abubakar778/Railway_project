@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ item }) => {
   return (
     <Card
-      className="mt-3 p-2 mb-2 product-card text-decoration-none text-dark"
-      style={{ minheight: "500px" }}
+      className="mt-3 p-2  product-card text-decoration-none text-dark"
+      style={{ height: "300px" }}
     >
       <Card.Body>
         <Card.Title className="text-capitalize pb-4 text-center fs-3">

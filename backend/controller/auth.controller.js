@@ -17,9 +17,9 @@ export const Login = asyncHandler(async (req, res) => {
     res.json({
       _id: user._id,
       name: user.name,
-      email: user.email,
       isadmin: user.isadmin,
       token: user.CreateToken(),
+      expireIn: 30,
     });
   } catch (err) {
     return res.json({ message: err.message }, 400);

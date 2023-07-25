@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,10 +9,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { loginSelector, logoutUser } from "../features/auth/loginSlice";
-
+// import { useState } from "react";
+// import { Jwt } from "jsonwebtoken";
 const Header = () => {
+  // const [isasmin, setisasmin] = useState(false);
+
   const { userInfo } = useSelector(loginSelector);
+
   const dispatch = useDispatch();
+
   const logout = () => {
     dispatch(logoutUser);
   };
@@ -34,7 +39,11 @@ const Header = () => {
               {userInfo ? (
                 <>
                   <NavDropdown title={userInfo.name} id="nav-dropdown">
-                    <NavDropdown.Item as={NavLink} to={"/profile"}>
+                    <NavDropdown.Item
+                      as={NavLink}
+                      to={"#"}
+                      className="disabled"
+                    >
                       Profile
                     </NavDropdown.Item>
                     {userInfo && userInfo.isadmin && (

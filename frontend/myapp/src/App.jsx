@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./components/Header";
 import { Routes, Route, Navigate } from "react-router-dom";
 import HomeScreen from "./screens/homeScreen";
@@ -19,8 +19,26 @@ import AdminCityScreen from "./screens/admin/AdminCityScreen";
 import AddCityScreen from "./screens/admin/AddCityScreen";
 import AdminOrderScreen from "./screens/admin/AdminOrderScreen";
 import OrderDetailScreen from "./screens/OrderDetailScreen";
+import { isSesstionExpires } from "./utilities/IsSeccionExpires";
+import { useSelector, useDispatch } from "react-redux";
+import { loginSelector } from "./features/auth/loginSlice";
+import { logoutUser } from "./features/auth/loginSlice";
 
 const App = () => {
+  const { userInfo } = useSelector(loginSelector);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    console.log("this is app useeffect");
+    const checkInterval = setInterval(() => {
+      console.log(typeof userInfo.expireIn);
+      console.log(userInfo.expireIn);
+      if (isSesstionExpires(userInfo.expireIn)) {
+        dispatch(logoutUser);
+      }
+    }, 60000);
+    return () => clearInterval(checkInterval);
+  }, [userInfo, dispatch]);
+
   return (
     <>
       <Header />
