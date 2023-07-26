@@ -4,7 +4,7 @@ import { Card, Row, Col } from "react-bootstrap";
 const FormContainer = ({ title, children }) => {
   return (
     <>
-      <Row className="justify-content-center mt-5">
+      <Row className="justify-content-center  mx-2">
         <Col md={6} xs={12}>
           {title ? (
             <Card.Body>

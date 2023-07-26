@@ -20,11 +20,19 @@ const HomeScreen = () => {
     <>
       {""}
       <Carouselboot />
-      <QuickSearchScreen />
+      <div className="py-5 px-4">
+        <div className=" py-5  bg-white rounded container form-shadow">
+          <QuickSearchScreen />
+        </div>
+      </div>
       <Container>
         {error && <Message>{error}</Message>}
         {loading && <Loader />}
-        <p className="mt-5 fs-1 ps-4 text-capitalize roboto">Avaible for you</p>
+        <div className="bg-info text-center text-white rounded text-bold">
+          <p className="mt-5 fs-1 ps-4 text-capitalize fw-bold">
+            Avaible for you
+          </p>
+        </div>
         <Row className="py-3">
           {items.map((item) => (
             <>

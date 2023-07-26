@@ -28,12 +28,16 @@ const FilterCityScreen = () => {
       {console.log(dept, dist)}
       {console.log(items.length)}
       <Carouselboot />
-      <QuickSearchScreen />
+      <div className="my-5 py-5 bg-white rounded container form-shadow">
+        <QuickSearchScreen />
+      </div>
       <Container>
         {error && <Message>{error}</Message>}
         {loading && <Loader />}
-        <h2 className="mt-5 fw-bolder">On Service</h2>
-        <Row>
+        <div className="bg-info text-center text-white rounded text-bold">
+          <p className="mt-5 fs-1 ps-4 text-capitalize fw-bold">On Service</p>
+        </div>
+        <Row className="py-5">
           {items.length <= 0 ? (
             <>
               <h4>no train on this route</h4>

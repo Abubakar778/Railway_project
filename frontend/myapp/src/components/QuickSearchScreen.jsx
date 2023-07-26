@@ -28,40 +28,46 @@ const QuickSearchScreen = () => {
       {loading ? <Loader /> : null}
       <Container>
         <FormContainer title={"Quick Search"}>
-          <Form onSubmit={handleSubmit}>
-            <Form.Label>Deparute City</Form.Label>
-            <Form.Select
-              key={cities._id}
-              value={departure}
-              onChange={(e) => setdeparture(e.target.value)}
-            >
-              <option>Select Deparute</option>
+          <Form onSubmit={handleSubmit} className="">
+            <div className="">
+              <Form.Label>Deparute City</Form.Label>
+              <Form.Select
+                key={cities._id}
+                value={departure}
+                onChange={(e) => setdeparture(e.target.value)}
+              >
+                <option>Select Deparute</option>
 
-              {cities.map((c) => (
-                <>
-                  <option key={c._id}>{c.name}</option>
-                </>
-              ))}
-            </Form.Select>
+                {cities.map((c) => (
+                  <>
+                    <option key={c._id}>{c.name}</option>
+                  </>
+                ))}
+              </Form.Select>
+            </div>
 
-            <Form.Label>Destination</Form.Label>
-            <Form.Select
-              key={cities._id}
-              value={distination}
-              onChange={(e) => setdistination(e.target.value)}
-            >
-              <option>Select Destination</option>
+            <div>
+              <Form.Label>Destination</Form.Label>
+              <Form.Select
+                key={cities._id}
+                value={distination}
+                onChange={(e) => setdistination(e.target.value)}
+              >
+                <option>Select Destination</option>
 
-              {cities.map((c) => (
-                <>
-                  <option key={c._id}>{c.name}</option>
-                </>
-              ))}
-            </Form.Select>
+                {cities.map((c) => (
+                  <>
+                    <option key={c._id}>{c.name}</option>
+                  </>
+                ))}
+              </Form.Select>
+            </div>
 
-            <Button type="submit" className="btn btn-info mt-2 ">
-              Submit
-            </Button>
+            <div className="">
+              <Button type="submit" className="btn btn-info mt-2 ">
+                Submit
+              </Button>
+            </div>
           </Form>
         </FormContainer>
       </Container>

@@ -6,7 +6,7 @@
   padding: 0;
 }
 .main-height{
-  min-height: calc(100vh - 141px);
+  min-height: calc(100vh - 99px);
   
 }
 a {
@@ -20,7 +20,7 @@ a {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .roboto{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'sans-serif' ,'Roboto';
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -34,5 +34,8 @@ a {
 }
 .bodyColor {
 background-color:#f5f5f5;
+}
+.form-shadow{
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
