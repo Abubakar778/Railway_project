@@ -43,23 +43,26 @@ const AddCityScreen = () => {
   };
   return (
     <>
-      <FormContainer title={"Add Train"}>
-        <Form onSubmit={SubmitHadndler}>
-          <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="text"
-              name="name"
-              value={Train.name}
-              onChange={HandleInput}
-            />
-          </Form.Group>
+      <div className="pt-5">
+        <FormContainer title={"Add Train"}>
+          <Form onSubmit={SubmitHadndler}>
+            <Form.Group className="mb-3 required">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                required="true"
+                value={Train.name}
+                onChange={HandleInput}
+              />
+            </Form.Group>
 
-          <Button variant="primary" type="submit">
-            ADD
-          </Button>
-        </Form>
-      </FormContainer>
+            <Button variant="primary" type="submit">
+              ADD
+            </Button>
+          </Form>
+        </FormContainer>
+      </div>
     </>
   );
 };

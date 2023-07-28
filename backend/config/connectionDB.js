@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import chalk from "chalk";
 // mogodb connection >>>>>>>>>>>>>>>>>>>>>>>>>
 const url = "mongodb://localhost:27017/trainproject";
+
 const connectionDb = () => {
   mongoose.connect(
     url,

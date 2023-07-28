@@ -38,7 +38,7 @@ const DashboardScreen = () => {
 
   return (
     <>
-      <Container className="my-5">
+      <Container className="py-4">
         <Row className="">
           <Col md={3}>
             <Card className="bg-success text-light">

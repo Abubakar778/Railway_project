@@ -36,7 +36,7 @@ const AdminProductScreen = () => {
       {loadind && <Loader />}
       {error && <Message>{error.message}</Message>}
 
-      <Row className="mt-5">
+      <Row className="pt-5">
         <Col md={3}>
           <Button
             className="btn btn-primary w-100"
@@ -81,12 +81,6 @@ const AdminProductScreen = () => {
                 <td>{item.eclassseats}</td>
                 <td>{item.eclassprice}</td>
                 <td>
-                  <Button
-                    className=" btn-danger text-dark"
-                    onClick={(e) => DeleteHandler(item._id)}
-                  >
-                    Del
-                  </Button>
                   <Button
                     className=" btn-warning text-dark"
                     onClick={() => EditHandler(item._id)}

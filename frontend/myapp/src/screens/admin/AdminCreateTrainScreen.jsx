@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import FormContainer from "../../components/FormContainer";
-import { Form, Button, FloatingLabel } from "react-bootstrap";
+import { Form, Button, FloatingLabel, Col } from "react-bootstrap";
 import { citySelector, fetchcities } from "../../features/city/citySlice";
 const AdminCreateTrainScreen = () => {
   const { userInfo } = useSelector(loginSelector);
@@ -63,172 +63,182 @@ const AdminCreateTrainScreen = () => {
   };
   return (
     <>
-      <FormContainer title={"Add Train"}>
-        <Form onSubmit={SubmitHadndler} className="my-3">
-          <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="text"
-              name="name"
-              value={Train.name}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Deparute City</Form.Label>
-            <Form.Select
-              key={cities._id}
-              name="depcity"
-              value={Train.depcity}
-              onChange={HandleInput}
-            >
-              <option>Select Deparute</option>
-
-              {cities.map((c) => (
-                <>
-                  <option key={c._id}>{c.name}</option>
-                </>
-              ))}
-            </Form.Select>
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Departure Date</Form.Label>
-            <Form.Control
-              type="date"
-              name="depdate"
-              value={Train.depdate}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Departure Time</Form.Label>
-            <Form.Control
-              type="text"
-              name="deptime"
-              value={Train.deptime}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Departure Day</Form.Label>
-            <Form.Control
-              type="text"
-              name="depday"
-              value={Train.depday}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Destination</Form.Label>
-            <Form.Select
-              key={cities._id}
-              name="destcity"
-              value={Train.destcity}
-              onChange={HandleInput}
-            >
-              <option>Select Destination</option>
-
-              {cities.map((c) => (
-                <>
-                  <option key={c._id}>{c.name}</option>
-                </>
-              ))}
-            </Form.Select>
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Arrival date</Form.Label>
-            <Form.Control
-              type="date"
-              name="destdate"
-              value={Train.destdate}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Arrival Time</Form.Label>
-            <Form.Control
-              type="text"
-              name="desttime"
-              value={Train.desttime}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Arrival Day</Form.Label>
-            <Form.Control
-              type="text"
-              name="destday"
-              value={Train.destday}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>E-class Seats</Form.Label>
-            <Form.Control
-              type="number"
-              name="eclassseats"
-              value={Train.eclassseats}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>E-class Price</Form.Label>
-            <Form.Control
-              type="number"
-              name="eclassprice"
-              value={Train.eclassprice}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>B-class Seats</Form.Label>
-            <Form.Control
-              type="number"
-              name="bclassseats"
-              value={Train.bclassseats}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>B-class Price</Form.Label>
-            <Form.Control
-              type="number"
-              name="bclassprice"
-              value={Train.bclassprice}
-              onChange={HandleInput}
-            />
-          </Form.Group>
-          <FloatingLabel
-            controlId="floatingTextarea"
-            label="Comments"
-            className="mb-3"
+      <div className="py-5">
+        <Col md={3}>
+          <Button
+            className="btn btn-primary w-100"
+            onClick={() => navigate(-1)}
           >
-            <Form.Control
-              as="textarea"
-              placeholder="Enter Details Here"
-              name="detail"
-              value={Train.detail}
-              onChange={HandleInput}
-            />
-          </FloatingLabel>
-
-          <Button variant="primary" type="submit">
-            ADD
+            Back
           </Button>
-        </Form>
-      </FormContainer>
+        </Col>
+        <FormContainer title={"Add Train"}>
+          <Form onSubmit={SubmitHadndler} className="my-3">
+            <Form.Group className="mb-3">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={Train.name}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Deparute City</Form.Label>
+              <Form.Select
+                key={cities._id}
+                name="depcity"
+                value={Train.depcity}
+                onChange={HandleInput}
+              >
+                <option>Select Deparute</option>
+
+                {cities.map((c) => (
+                  <>
+                    <option key={c._id}>{c.name}</option>
+                  </>
+                ))}
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Departure Date</Form.Label>
+              <Form.Control
+                type="date"
+                name="depdate"
+                value={Train.depdate}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Departure Time</Form.Label>
+              <Form.Control
+                type="text"
+                name="deptime"
+                value={Train.deptime}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Departure Day</Form.Label>
+              <Form.Control
+                type="text"
+                name="depday"
+                value={Train.depday}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Destination</Form.Label>
+              <Form.Select
+                key={cities._id}
+                name="destcity"
+                value={Train.destcity}
+                onChange={HandleInput}
+              >
+                <option>Select Destination</option>
+
+                {cities.map((c) => (
+                  <>
+                    <option key={c._id}>{c.name}</option>
+                  </>
+                ))}
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Arrival date</Form.Label>
+              <Form.Control
+                type="date"
+                name="destdate"
+                value={Train.destdate}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Arrival Time</Form.Label>
+              <Form.Control
+                type="text"
+                name="desttime"
+                value={Train.desttime}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Arrival Day</Form.Label>
+              <Form.Control
+                type="text"
+                name="destday"
+                value={Train.destday}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>E-class Seats</Form.Label>
+              <Form.Control
+                type="number"
+                name="eclassseats"
+                value={Train.eclassseats}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>E-class Price</Form.Label>
+              <Form.Control
+                type="number"
+                name="eclassprice"
+                value={Train.eclassprice}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>B-class Seats</Form.Label>
+              <Form.Control
+                type="number"
+                name="bclassseats"
+                value={Train.bclassseats}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>B-class Price</Form.Label>
+              <Form.Control
+                type="number"
+                name="bclassprice"
+                value={Train.bclassprice}
+                onChange={HandleInput}
+              />
+            </Form.Group>
+            <FloatingLabel
+              controlId="floatingTextarea"
+              label="Enter Details Here"
+              className="mb-3"
+            >
+              <Form.Control
+                as="textarea"
+                placeholder=""
+                name="detail"
+                value={Train.detail}
+                onChange={HandleInput}
+              />
+            </FloatingLabel>
+
+            <Button variant="primary" type="submit">
+              ADD
+            </Button>
+          </Form>
+        </FormContainer>
+      </div>
     </>
   );
 };

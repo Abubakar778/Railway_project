@@ -19,7 +19,7 @@ const AdminUserScreen = () => {
       {loading && <Loader />}
       {error && <Message>{error}</Message>}
 
-      <Row className="mt-5">
+      <Row className="pt-5">
         <Col md={3}>
           <Button
             className="btn btn-primary w-100"

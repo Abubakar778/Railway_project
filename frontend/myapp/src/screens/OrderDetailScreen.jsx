@@ -41,7 +41,7 @@ const OrderDetailScreen = () => {
         </>
       ) : (
         <>
-          <Container>
+          <Container className="py-3">
             <Row className=" mt-3 flex-column justify-content-center align-items-center">
               <Col md={6} sm={6}>
                 <Card ref={componentRef} className="w-100">
