@@ -58,9 +58,7 @@ export const createOrder = asyncHandler(async (req, res) => {
 
 export const payOrder = asyncHandler(async (req, res) => {
   const { token, amount } = req.body;
-  const stripe = new Stripe(
-    "sk_test_51MlVDzSAGDOVIp1UeuZwt1J5cz8TCaDowDym8t3YRMUh2fQYPCVdxLyKESe5R1D92eSOGi8h04NN8U1LIDGmwIzo00Wd21R2f4"
-  );
+  const stripe = new Stripe(process.env.STRIP_KEY);
 
   try {
     await stripe.charges.create({

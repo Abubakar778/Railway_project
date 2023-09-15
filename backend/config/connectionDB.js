@@ -1,18 +1,17 @@
 import mongoose from "mongoose";
 import chalk from "chalk";
 // mogodb connection >>>>>>>>>>>>>>>>>>>>>>>>>
-const url = "mongodb://localhost:27017/trainproject";
 
 const connectionDb = () => {
   mongoose.connect(
-    url,
+    process.env.URL,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     },
     (err) => {
       if (err) {
-        console.log("not connected to mongo db");
+        console.log(chalk.bgWhite.red("not connected to mongo db"));
       } else {
         console.log(chalk.green("successfully connected to mongodb"));
       }

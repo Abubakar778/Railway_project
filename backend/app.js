@@ -43,7 +43,7 @@ app.use("*", (req, res) => {
   res.status(401);
 });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log(
     chalk.bgWhite.green.bold(
